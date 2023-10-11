@@ -10,7 +10,7 @@ filters: &filters
     only: /.*/
 
 workflows:
-  lint-pack:
+ - lint-pack:
     jobs:
       - orb-tools/lint:
           filters: *filters
@@ -21,7 +21,7 @@ workflows:
       - shellcheck/check:
           exclude: SC2148,SC2038,SC2086,SC2002,SC2016
           filters: *filters
-    test:
+  - test:
       jobs:
         - gradle/test
 
