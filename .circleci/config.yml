@@ -21,8 +21,7 @@ workflows:
       - shellcheck/check:
           exclude: SC2148,SC2038,SC2086,SC2002,SC2016
           filters: *filters
-      - gradle/test:
-          working_directory: sample_app/src/gradlew
+      - gradle/test
 
           
           
