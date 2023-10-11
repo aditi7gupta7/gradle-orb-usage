@@ -3,6 +3,7 @@ setup: true
 orbs:
   orb-tools: circleci/orb-tools@11.1
   shellcheck: circleci/shellcheck@3.1
+  gradle: circleci/gradle@3.0.0
 
 filters: &filters
   tags:
@@ -20,3 +21,9 @@ workflows:
       - shellcheck/check:
           exclude: SC2148,SC2038,SC2086,SC2002,SC2016
           filters: *filters
+    test:
+      jobs:
+        - gradle/test
+
+          
+          
